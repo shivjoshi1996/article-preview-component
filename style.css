@@ -1,0 +1,122 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+:root {
+    --dark-gray-blue: hsl(217, 19%, 35%);
+    --dark-blue: hsl(214, 17%, 51%);
+    --gray-blue: hsl(212, 23%, 69%);
+    --light-gray-blue: hsl(210, 46%, 95%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 100%;
+    font-family: 'Manrope', sans-serif;
+}
+
+body {
+    background-color: var(--light-gray-blue);
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.preview-container {
+    height: 80vh;
+    background-color: white;
+    width: 90vw;
+    max-width: 375px;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    
+}
+
+.preview-image {
+    background-image: url(./images/drawers.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.preview-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.preview-title {
+    font-size: 1.2rem;
+    color: var(--dark-gray-blue);
+    font-weight: 700;
+}
+
+.preview-description {
+    color: var(--dark-gray-blue);
+}
+
+.preview-author-avatar img {
+    border-radius: 100px;
+    height: 50px;
+}
+
+.preview-details {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    justify-content: space-between;
+}
+
+.preview-share-icon {
+    padding: 5px 8px 5px 8px;
+    background-color: var(--light-gray-blue);
+    border-radius: 50px;
+}
+
+.preview-share-hover {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    display: none;
+}
+
+/* MEDIA QUERIES */ 
+
+@media (min-width: 800px) {
+    .preview-container {
+        grid-template-columns: 1.3fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        max-width: 800px;
+        max-height: 300px;
+    }
+    .preview-image {
+        grid-row: 1 / -1;
+    }
+    .preview-content {
+        grid-row: 1 / -1
+    }
+
+    .preview-share-icon {
+        position: relative;
+    }
+}
